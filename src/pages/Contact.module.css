@@ -1,0 +1,99 @@
+.contactContainer {
+  width: 100%;
+  padding-top: 120px;
+}
+
+.header {
+  padding: 4rem 0 6rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 5rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+}
+
+.contentSection {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 8rem;
+}
+
+.frameWrapper {
+  width: 100%;
+}
+
+.contactBox {
+  background: var(--glass-bg);
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.infoGroup h3 {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.emailLink {
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 8px;
+  transition: opacity 0.2s ease;
+}
+
+.emailLink:hover {
+  opacity: 0.8;
+}
+
+.infoGroup p {
+  font-size: 1.125rem;
+  color: var(--text-primary);
+}
+
+.meta {
+  font-size: 0.875rem !important;
+  color: var(--text-secondary) !important;
+  margin-top: 0.5rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.socialLinks a {
+  font-size: 1.125rem;
+  color: var(--text-primary);
+  transition: color 0.2s ease;
+}
+
+.socialLinks a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+  .contactBox {
+    padding: 2rem;
+  }
+  .emailLink {
+    font-size: 1.5rem;
+  }
+}
