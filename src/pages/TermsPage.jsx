@@ -1,38 +1,59 @@
 import React from "react"
-import PageIntro from "../components/PageIntro"
-import Reveal from "../components/Reveal"
+import SectionLabel from "../components/SectionLabel"
+import MasterButton from "../components/MasterButton"
+import TextEffect from "../components/TextEffect"
+import { siteInfo } from "../data/content"
+
 export default function TermsPage() {
     return (
-        <div className="page legal-page">
-            <PageIntro
-                eyebrow="Legal"
-                title="Terms & Conditions"
-                body="These terms govern the use of this website and outline the basis for engaging Aperture photography services."
-            />
-            <Reveal className="section prose surface-card">
-                <h2>Website Use</h2>
-                <p>
-                    All content is provided for informational and portfolio purposes. You may not reproduce or reuse
-                    imagery without written permission.
-                </p>
-                <h2>Booking & Scope</h2>
-                <p>
-                    Project bookings are confirmed through written agreement defining usage, schedule, deliverables, and
-                    fees. Availability is not guaranteed until confirmation.
-                </p>
-                <h2>Intellectual Property</h2>
-                <p>
-                    Unless otherwise agreed in writing, all photographs remain the intellectual property of August
-                    Renner. Licensing terms are specified per project.
-                </p>
-                <h2>Liability</h2>
-                <p>
-                    While reasonable care is taken in all production stages, Aperture is not liable for losses caused
-                    by force majeure, location restrictions, or third-party delays.
-                </p>
-                <h2>Contact</h2>
-                <p>Questions regarding these terms can be directed to studio@aperture-photo.com.</p>
-            </Reveal>
+        <div className="legal-page-root">
+            <div className="legal-container">
+                <header className="legal-header">
+                    <SectionLabel>Legal</SectionLabel>
+                    <h1 className="legal-title">
+                        <TextEffect text="Terms & Conditions" tokenization="character" delay={0.5} />
+                    </h1>
+                    <p className="legal-subtitle">
+                        These terms govern the use of this website and outline the general engagement standards for commissioning photography services from August Renner.
+                    </p>
+                </header>
+
+                <div className="legal-prose-content">
+                    <section className="legal-section">
+                        <h2>1. Intellectual Property & Copyright</h2>
+                        <p>
+                            All photographs, visual media, text, layout designs, and graphics appearing on this website are the exclusive intellectual property of August Renner unless credited otherwise. Unauthorized reproduction, digital scraping, generative model training, or commercial distribution of any image without prior written authorization is strictly prohibited.
+                        </p>
+                    </section>
+
+                    <section className="legal-section">
+                        <h2>2. Commissioning & Commercial Licensing</h2>
+                        <p>
+                            All commissioned assignments are executed under bespoke written production agreements. Usage rights, media channels (print, digital, out-of-home), geographical territories, and duration terms are specified individually per project. Usage rights transfer only upon receipt of full settlement.
+                        </p>
+                    </section>
+
+                    <section className="legal-section">
+                        <h2>3. Booking Deposits and Cancellations</h2>
+                        <p>
+                            Due to crew scheduling, location bookings, and equipment reservations, commissions are confirmed upon signature and receipt of the designated production deposit. In the event of client postponement or cancellation, standard industry terms apply as detailed in individual production estimates.
+                        </p>
+                    </section>
+
+                    <section className="legal-section">
+                        <h2>4. Governing Law</h2>
+                        <p>
+                            Agreements are governed by and construed in accordance with the applicable laws of Germany and the United Kingdom, respective of shoot territory.
+                        </p>
+                    </section>
+                </div>
+
+                <div className="legal-back-row">
+                    <MasterButton to="/" variant="dark">
+                        Return home
+                    </MasterButton>
+                </div>
+            </div>
         </div>
     )
 }

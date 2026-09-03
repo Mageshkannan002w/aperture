@@ -12,21 +12,28 @@ import ContactPage from "./pages/ContactPage"
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage"
 import TermsPage from "./pages/TermsPage"
 import NotFoundPage from "./pages/NotFoundPage"
+
 function AnimatedPage({ children }) {
     const reduceMotion = useReducedMotion()
+
     return (
         <motion.div
-            initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+            initial={reduceMotion ? false : { opacity: 0, y: 20 }}
             animate={reduceMotion ? {} : { opacity: 1, y: 0 }}
-            exit={reduceMotion ? {} : { opacity: 0, y: -12 }}
-            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            exit={reduceMotion ? {} : { opacity: 0, y: -16 }}
+            transition={{
+                duration: 0.4,
+                ease: [0.22, 1, 0.36, 1],
+            }}
         >
             {children}
         </motion.div>
     )
 }
+
 export default function App() {
     const location = useLocation()
+
     return (
         <AppShell>
             <AnimatePresence mode="wait">
@@ -41,7 +48,7 @@ export default function App() {
                     <Route path="/privacy-policy" element={<AnimatedPage><PrivacyPolicyPage /></AnimatedPage>} />
                     <Route path="/terms-and-conditions" element={<AnimatedPage><TermsPage /></AnimatedPage>} />
                     <Route path="/404" element={<AnimatedPage><NotFoundPage /></AnimatedPage>} />
-                    <Route path="*" element={<Navigate to="/404" replace />} />
+                    <Route path="*" element={<AnimatedPage><NotFoundPage /></AnimatedPage>} />
                 </Routes>
             </AnimatePresence>
         </AppShell>

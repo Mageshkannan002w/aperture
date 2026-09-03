@@ -1,23 +1,30 @@
 import React from "react"
-import { Link } from "react-router-dom"
-import PageIntro from "../components/PageIntro"
-import Reveal from "../components/Reveal"
+import SectionLabel from "../components/SectionLabel"
+import MasterButton from "../components/MasterButton"
+import Corners from "../components/Corners"
+
 export default function NotFoundPage() {
     return (
-        <div className="page">
-            <PageIntro
-                eyebrow="404"
-                title="This page is out of frame."
-                body="The link may have changed, or the page may no longer exist."
-            />
-            <Reveal className="section cta-line">
-                <Link to="/" className="button-pill">
-                    Return home
-                </Link>
-                <Link to="/portfolio" className="button-pill button-outline">
-                    View portfolio
-                </Link>
-            </Reveal>
+        <div className="not-found-page-root">
+            <div className="not-found-card">
+                <SectionLabel>404 Error</SectionLabel>
+                <div className="not-found-number-frame">
+                    <span className="not-found-big-text">404</span>
+                    <Corners variant="all" />
+                </div>
+                <h1 className="not-found-heading">This frame is out of focus</h1>
+                <p className="not-found-body">
+                    The page or project you requested may have been relocated, archived, or does not exist.
+                </p>
+                <div className="not-found-actions">
+                    <MasterButton to="/" variant="dark">
+                        Return home
+                    </MasterButton>
+                    <MasterButton to="/portfolio" variant="light">
+                        Browse portfolio
+                    </MasterButton>
+                </div>
+            </div>
         </div>
     )
 }
