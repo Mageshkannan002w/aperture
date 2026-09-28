@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { motion, useReducedMotion } from "framer-motion"
 import ImageFrame from "./ImageFrame"
 
-export default function PortfolioCard({ project, priority = false }) {
+export default function PortfolioCard({ project, badgeText = "Portfolio", priority = false }) {
     const reduceMotion = useReducedMotion()
 
     return (
@@ -17,8 +17,8 @@ export default function PortfolioCard({ project, priority = false }) {
                     <ImageFrame
                         src={project.cover}
                         alt={project.title}
-                        aspectRatio="16/11"
-                        innerRadius={10}
+                        aspectRatio="4/3"
+                        innerRadius={12}
                         cornersVariant="all"
                         hoverScale={true}
                     />
@@ -28,7 +28,7 @@ export default function PortfolioCard({ project, priority = false }) {
                         <h3 className="portfolio-card-title">{project.title}</h3>
                         <p className="portfolio-card-date">{project.date}</p>
                     </div>
-                    <span className="category-badge">{project.category}</span>
+                    <span className="category-badge">{badgeText}</span>
                 </div>
             </Link>
         </motion.article>
